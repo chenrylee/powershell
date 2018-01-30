@@ -1,4 +1,4 @@
-```powershell
+
 # Convert currency to yours
 # Thanks to Google's support
 function ConvertTo-MyCurrency {
@@ -26,4 +26,3 @@ function ConvertTo-MyCurrency {
     $result = (Invoke-WebRequest -Uri $url).content -replace "(.*\n)*.*bld>|\s$To.*(.*\n)*"
     Write-Host "`t$Amount $From = $result $To"
 }
-```

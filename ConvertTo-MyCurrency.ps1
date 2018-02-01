@@ -22,7 +22,7 @@ function ConvertTo-MyCurrency {
         Write-Warning -Message "Idiot! You can't convert $From to $To by yourself?!"
         break
     }
-    $url = "https://finance.google.com/finance/converter?a=$Amount&from=$From&to=$To"
+    $url = "https://finance.google.cn/finance/converter?a=$Amount&from=$From&to=$To"
     $result = (Invoke-WebRequest -Uri $url).content -replace "(.*\n)*.*bld>|\s$To.*(.*\n)*"
     Write-Host "`t$Amount $From = $result $To"
 }
